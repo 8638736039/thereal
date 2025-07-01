@@ -1,34 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login - The Real</title>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - The Real News</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h2>Admin Login</h2>
-  <input type="email" id="email" placeholder="Email">
-  <input type="password" id="password" placeholder="Password">
-  <button onclick="login()">Login</button>
-
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyB12345...",
-      authDomain: "thereal-portal.firebaseapp.com",
-      projectId: "thereal-portal",
-      storageBucket: "thereal-portal.appspot.com",
-      messagingSenderId: "1234567890",
-      appId: "1:1234567890:web:abcde123456"
-    };
-    firebase.initializeApp(firebaseConfig);
-
-    function login() {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(() => window.location.href = "dashboard.html")
-        .catch(err => alert("Login failed: " + err.message));
-    }
-  </script>
+  <header>
+    <h1>The Real News Login</h1>
+  </header>
+  <main>
+    <form id="loginForm">
+      <label>Username:</label><br />
+      <input type="text" id="username" required /><br /><br />
+      <label>Password:</label><br />
+      <input type="password" id="password" required /><br /><br />
+      <button type="submit">Login</button>
+    </form>
+    <p id="message" style="color:red;"></p>
+  </main>
+  <footer>
+    <p>&copy; 2025 The Real News</p>
+  </footer>
+  <script src="login.js"></script>
 </body>
 </html>
