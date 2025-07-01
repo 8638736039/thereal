@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="BnjEggmWyYvx-M" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Real News</title>
+</head>
+<body>
+  <header>
+    <h1>The Real News</h1>
+  </header>
+  <main id="news-container">
+    <p>Loading news...</p>
+  </main>
+  <footer>
+    <p>&copy; 2025 The Real News</p>
+  </footer>
+  <script src="news.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+          console.log('Service Worker registered with scope:', registration.scope);
+        }, function(error) {
+          console.log('Service Worker registration failed:', error);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
